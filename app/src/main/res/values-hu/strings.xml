@@ -1,0 +1,273 @@
+version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="app_name">Cowspent</string>
+
+    <!-- Actions -->
+    <string name="action_new_bill">Új számla</string>
+    <string name="action_add_project">Projekt hozzáadása</string>
+    <string name="action_save">Mentés</string>
+    <string name="action_edit">Szerkesztés</string>
+    <string name="action_share">Megosztás</string>
+    <string name="action_search">Keresés</string>
+    <string name="action_delete">Törlés</string>
+    <string name="action_archive">Archívum</string>
+    <string name="action_unarchive">Archívum visszavonása</string>
+    <string name="action_export">Exportálás</string>
+    <string name="action_stats">Statisztikák</string>
+    <string name="action_settle">Elszámolás</string>
+    <string name="action_scan_qrcode">Scan QR Code</string>
+    <string name="action_settings">Beállítások</string>
+    <string name="action_label_bills">Hiányzó kategóriák címkézése</string>
+    <string name="action_logout">Kijelentkezés</string>
+    <string name="action_connect">Kijelentkezés</string>
+    <string name="action_discard">Elvetés</string>
+    <string name="action_members">Tagok</string>
+    <string name="action_labels">Címkék</string>
+    <string name="action_currencies">Valuták</string>
+
+    <!-- Titles -->
+    <string name="title_stats">Statisztika</string>
+    <string name="title_edit_project">Projekt szerkesztése</string>
+    <string name="title_label_bills">Számlák címkézése</string>
+    <string name="title_labels">Címkék kezelése</string>
+    <string name="title_about">Körülbelül</string>
+    <string name="title_settle">Projekt lezárása</string>
+    <string name="title_share">Projekt megosztása</string>
+    <string name="title_add_project">Projekt hozzáadása</string>
+    <string name="title_account">Nextcloud Fiók</string>
+    <string name="title_share_web">Web link</string>
+    <string name="title_share_qr">Cowspent link</string>
+    <string name="title_confirm">Biztos vagy benne?</string>
+
+    <!-- Labels and Fields -->
+    <string name="label_all_bills">Összes számla</string>
+    <string name="label_categories">Kategóriák</string>
+    <string name="label_payment_modes">Fizetési módok</string>
+    <string name="label_name">Név</string>
+    <string name="label_icon">Ikon / Emoji</string>
+    <string name="label_color">Szín</string>
+    <string name="label_weight">Súly</string>
+    <string name="label_activated">Aktív</string>
+    <string name="label_password">Jelszó</string>
+    <string name="label_email">E-mail</string>
+    <string name="label_url">Server címe</string>
+    <string name="label_username">Felhasználónév</string>
+    <string name="label_comment">Megjegyzés</string>
+    <string name="label_what">Mi?</string>
+    <string name="label_payer">Ki fizetett?</string>
+    <string name="label_owers">Kinek?</string>
+    <string name="label_repeat">Ismétlődés</string>
+    <string name="label_mode">Mód</string>
+    <string name="label_category">Kategória</string>
+    <string name="label_project_id">Projekt ID/name</string>
+    <string name="label_project_title">Projekt címe</string>
+    <string name="label_use_sso">Használja a Nextcloud alkalmazásfiókot</string>
+
+    <!-- Dialogs and Messages -->
+    <string name="dialog_unsaved_changes_title">Nem mentett változtatások</string>
+    <string name="dialog_unsaved_changes_msg">Menti a változtatásokat kilépés előtt?</string>
+    <string name="dialog_confirm_remove_project_msg">A távoli projekt nem törlődik.</string>
+    <string name="dialog_sync_error_title">Szinkronizálási hiba</string>
+    <string name="dialog_sync_error_msg">Szinkronizálás sikertelen a következőhöz: %1$s.\n\n%2$s</string>
+    <string name="dialog_balanced_msg">Nincs rendezendő tartozás</string>
+    <string name="msg_project_added">Projekt %1$s hozzáadva</string>
+    <string name="msg_bill_labeled_done">Minden számla címkével ellátva</string>
+    <string name="msg_no_suggestions">Nincsenek javaslatok</string>
+    <string name="msg_auth_warning">Cospend szükséges v0.3.4+.</string>
+    <string name="msg_link_copied">Link a vágólapra másolva</string>
+    <string name="msg_share_qr">Olvasd be a QR-kódot, vagy oszd meg a linket a csatlakozáshoz.</string>
+    <string name="msg_share_web">Link a webböngészőhöz való hozzáféréshez.</string>
+    <string name="msg_share_qr_warn">Oszd meg ezt a linket egy Cowspent felhasználóval.</string>
+    <string name="msg_settle_intro">Elszámolás %1$s:</string>
+    <string name="msg_settle_sentence">%1$s V %3$.2f hogy %2$s</string>
+    <string name="msg_stats_intro">Statisztikák ehhez: %1$s:</string>
+    <string name="msg_stats_header">Tag (Fizetett | Költött | Egyenleg)</string>
+    <string name="msg_logged_in_as">Bejelentkezve mint %1$s</string>
+
+    <!-- Errors -->
+    <string name="error_generic">Hiba</string>
+    <string name="error_loading">Terhelés</string>
+    <string name="error_no_projects">Nem található projekt</string>
+    <string name="error_no_members">Nem találhatók tagok</string>
+    <string name="error_no_bills">Nem találhatók számlák</string>
+    <string name="error_no_member">Legalább egy tag szükséges</string>
+    <string name="error_maintenance_mode">A szerver karbantartási módban van</string>
+    <string name="error_400">400 Hibás kérés</string>
+    <string name="error_401">401 Jogosulatlan</string>
+    <string name="error_403">403 Tiltott</string>
+    <string name="error_404">404 Nem található</string>
+    <string name="error_sync">Szinkronizálás sikertelen: %1$s</string>
+    <string name="error_invalid_login">Érvénytelen bejelentkezés: %1$s</string>
+    <string name="error_auth">Hibás felhasználónév vagy jelszó</string>
+    <string name="error_json">Érvénytelen szerverválasz</string>
+    <string name="error_req_failed">A kérés sikertelen</string>
+    <string name="error_invalid_email">Érvénytelen e-mail cím</string>
+    <string name="error_invalid_project_id">Érvénytelen projekt ID</string>
+    <string name="error_invalid_project_name">Érvénytelen projekt címe</string>
+    <string name="error_invalid_bill_name">Érvénytelen számlanév</string>
+    <string name="error_invalid_bill_date">Érvénytelen számlázási dátum</string>
+    <string name="error_invalid_bill_payer">Válassz fizetőt</string>
+    <string name="error_invalid_bill_owers">Válassz legalább egy tagot</string>
+    <string name="error_no_network">Nincs hálózati kapcsolat</string>
+    <string name="error_server">Szerverhiba</string>
+    <string name="error_io">Szerverkapcsolat megszakadt</string>
+    <string name="error_share_impossible">Cannot share this project</string>
+
+    <!-- Drawer / Common UI -->
+    <string name="drawer_no_account">Csatlakozás a Nextcloud fiókhoz</string>
+    <string name="drawer_last_sync">Utolsó szinkronizálás: %1$02d:%2$02d</string>
+    <string name="simple_cancel">Mégsem</string>
+    <string name="simple_ok" tools:ignore="ButtonCase,Typos">Ok</string>
+    <string name="simple_yes">Igen</string>
+    <string name="simple_no">Nem</string>
+    <string name="simple_close">Bezár</string>
+
+    <!-- Settings -->
+    <string name="settings_appearance">Megjelenés</string>
+    <string name="settings_network">Hálózat</string>
+    <string name="settings_other">Egyébb</string>
+    <string name="settings_night_mode">Téma</string>
+    <string name="settings_offline_mode">Offline mód</string>
+    <string name="settings_offline_mode_summary">Csak manuális szinkronizálás.</string>
+    <string name="settings_color_custom">Egyedi szín</string>
+    <string name="settings_color_mode">Színválasztás</string>
+    <string name="settings_show_archived">Archivált projektek megjelenítése</string>
+    <string name="settings_url_warn_http">FIGYELMEZTETÉS: A „http” nem biztonságos. Használd a „https”-t.</string>
+    <string name="settings_colorpicker_title">Szín kiválasztása</string>
+
+    <string name="pref_value_color_system">Rendszer</string>
+    <string name="pref_value_color_server">Nextcloud</string>
+    <string name="pref_value_color_manual">Kézikönyv</string>
+    <string name="pref_value_theme_light">Világos</string>
+    <string name="pref_value_theme_dark">Sötét</string>
+    <string name="pref_value_theme_system">Kövesse a rendszertémát</string>
+
+    <!-- Constants (Do not translate) -->
+    <string name="pref_key_night_mode" translatable="false">nightMode</string>
+    <string name="pref_key_color" translatable="false">appColor</string>
+    <string name="pref_key_server_color" translatable="false">serverColor</string>
+    <string name="pref_key_avatar" translatable="false">ncAvatar</string>
+    <string name="pref_key_use_server_color" translatable="false">useServerColor</string>
+    <string name="pref_key_use_system_color" translatable="false">useSystemColor</string>
+    <string name="pref_key_color_mode" translatable="false">colorMode</string>
+    <string name="pref_key_offline_mode" translatable="false">offlineMode</string>
+    <string name="pref_key_show_archived" translatable="false">showArchived</string>
+    <string name="pref_value_night_mode_no" translatable="false">1</string>
+    <string name="pref_value_night_mode_yes" translatable="false">2</string>
+    <string name="pref_value_night_mode_system" translatable="false">-1</string>
+
+    <!-- Enums and Lists -->
+    <string name="repeat_no">Nincs ismétlés</string>
+    <string name="repeat_day">Napi</string>
+    <string name="repeat_week">Heti</string>
+    <string name="repeat_fortnight">Kétheti</string>
+    <string name="repeat_month">Havi</string>
+    <string name="repeat_year">Évi</string>
+
+    <string name="payment_mode_none">Nincs</string>
+    <string name="payment_mode_all">Minden</string>
+    <string name="payment_mode_credit_card">Bankkártya</string>
+    <string name="payment_mode_cash">Készpénz</string>
+    <string name="payment_mode_check">Ellenőrzés</string>
+    <string name="payment_mode_online">Online</string>
+    <string name="payment_mode_transfer">Átutalás</string>
+
+    <string name="category_none">Nincs</string>
+    <string name="category_all">Összes</string>
+    <string name="category_all_except_reimbursement">Összes, kivéve a költségtérítéseket</string>
+    <string name="category_groceries">Élelmiszer</string>
+    <string name="category_leisure">Bár/Szórakozás</string>
+    <string name="category_rent">Lakbér</string>
+    <string name="category_bills">Számla</string>
+    <string name="category_excursion">Kirándulás/Kultúra</string>
+    <string name="category_health">Egészség</string>
+    <string name="category_shopping">Vásárlás</string>
+    <string name="category_reimbursement">Költségtérítés</string>
+    <string name="category_restaurant">Étterem</string>
+    <string name="category_accomodation">Szállás</string>
+    <string name="category_transport">Közlekedés</string>
+    <string name="category_sport">Sport</string>
+
+    <!-- Project specific -->
+    <string name="new_project_action">Mit</string>
+    <string name="new_project_where">Hol</string>
+    <string name="where_local">Csak helyben</string>
+    <string name="where_cospend">Cospend</string>
+    <string name="where_ihatemoney">IHateMoney</string>
+    <string name="todo_join">Csatlakozás meglévő projekthez</string>
+    <string name="todo_create">Új projekt létrehozása</string>
+    <string name="import_tooltip">Importálás fájlból</string>
+    <string name="choose_account_project_dialog_title">Projekt kiválasztása</string>
+    <string name="choose_account_project_dialog_impossible">Ehhez a fiókhoz nem található projekt.</string>
+    <string name="choose_project_management_action">Projekt</string>
+    <string name="project_added_success">A projekt sikeresen hozzáadva.</string>
+    <string name="no_projects_text">Még nincs projekted.</string>
+    <string name="configure_account_choice">Nextcloud-fiók beállítása</string>
+    <string name="add_project_choice">Projekt hozzáadása kézzel</string>
+    <string name="no_members_text">Ebben a projektben nincsenek tagok.</string>
+    <string name="no_bills_text">Nincsenek kiadások.</string>
+    <string name="member_already_exists">A tag már létezik.</string>
+    <string name="activity_dialog_title">Projekt: %1$s</string>
+    <string name="remove_project_confirmation">A %1$s projekt eltávolítása.</string>
+    <string name="file_saved_success">Fájl mentve: %1$s</string>
+    <string name="import_error_header">Az importálás sikertelen a(z) %d sorban</string>
+    <string name="import_error_date">Érvénytelen dátumformátum a(z) %d sorban</string>
+    <string name="import_error_owers">Érvénytelen résztvevők a(z) %d sorban</string>
+    <string name="add_member_dialog_title">Tag hozzáadása</string>
+    <string name="edit_member_dialog_title">Tag szerkesztése</string>
+    <string name="member_edit_delete">Törlés</string>
+    <string name="project_edition_no_change">Nincs menthető módosítás.</string>
+
+    <!-- Settlement -->
+    <string name="center_none">Nincs (optimális)</string>
+    <string name="settle_who">Ki fizet</string>
+    <string name="settle_to_whom">Kinek</string>
+    <string name="settle_how_much">Összeg</string>
+    <string name="simple_settle_share">Megosztás</string>
+    <string name="simple_create_bills">Kiadások létrehozása</string>
+    <string name="settle_bill_what">Elszámolás</string>
+
+    <!-- Currencies -->
+    <string name="currency_dialog_title">Pénznem kiválasztása</string>
+    <string name="setting_none">Nincs</string>
+    <string name="setting_all">Összes</string>
+    <string name="currency_saved_success">A pénznembeállítások mentve.</string>
+    <string name="main_currency">Alapértelmezett pénznem</string>
+
+    <!-- Statistics -->
+    <string name="label_bills_suggested">Javasolt kategóriák</string>
+    <string name="label_bills_skip">Kihagyás</string>
+    <string name="stats_date_min">Kezdő dátum</string>
+    <string name="stats_date_max">Záró dátum</string>
+    <string name="stats_who">Tag</string>
+    <string name="stats_paid">Fizetett</string>
+    <string name="stats_spent">Elköltött</string>
+    <string name="stats_balance">Egyenleg</string>
+    <string name="total">Összesen: %1$s</string>
+
+    <!-- Errors Extra -->
+    <string name="error_project_connect_check">A kapcsolódás sikertelen: %1$s</string>
+    <string name="error_create_remote_project_helper">A létrehozás sikertelen: %1$s</string>
+    <string name="error_edit_remote_project_helper">Hiba a távoli projekt frissítésekor: %1$s</string>
+    <string name="remote_project_operation_no_network">A távoli művelethez nincs hálózati kapcsolat.</string>
+    <string name="error_scanning_bill_qr_code">A QR-kód feldolgozása sikertelen.</string>
+    <string name="error_token_mismatch">Az azonosítási token nem egyezik. Jelentkezz be újra.</string>
+    <string name="insufficient_access_level">Nincs jogosultságod a művelet végrehajtásához.</string>
+    <string name="delete_label_confirmation_title">Címke törlése</string>
+    <string name="delete_label_confirmation_message">Biztosan törölni szeretnéd ezt a címkét?</string>
+
+    <!-- About -->
+    <string name="about_version">Verzió %1$s</string>
+    <string name="about_maintainer_title">Karbantartó</string>
+    <string name="about_maintainer" translatable="false">Helcel.net</string>
+    <string name="about_license_title">Engedély</string>
+    <string name="about_license" translatable="false">GNU GPL3x / CC BY-SA 4.0</string>
+    <string name="about_source_title">Forráskód</string>
+    <string name="about_source" translatable="false">https://github.com/helcel-net/cowspent</string>
+
+    <!-- New constants for backward compatibility or shared use -->
+    <string name="share_intent_title">%1$s projekt</string>
+    <string name="share_chooser_title">%1$s megosztása</string>
+
+</resources>
