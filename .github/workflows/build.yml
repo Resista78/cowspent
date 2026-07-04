@@ -15,55 +15,32 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - name: set up secrets
-        run: |
-          echo "${{ secrets.RELEASE_KEYSTORE }}" > keystore.asc
-          echo "${{ secrets.RELEASE_KEY}}" > key.asc
-          gpg -d --passphrase "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" --batch keystore.asc > app/keystore.properties
-          gpg -d --passphrase "${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" --batch key.asc > app/key.jks          
-
-      - name: create and checkout branch
-        if: github.event_name == 'pull_request'
-        env:
-          BRANCH: ${{ github.head_ref }}
-        run: git checkout -B "$BRANCH"
-
-      - name: set up JDK
+      - name: Set up JDK
         uses: actions/setup-java@v5
         with:
           java-version: 21
-          distribution: "temurin"
+          distribution: temurin
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
 
-      - name: Build APK
+      - name: Build Debug APK
         run: |
           VERSION_CODE=$(git rev-list --count HEAD)
           VERSION_NAME=$(git describe --tags --always)
-          ./gradlew assembleSignedRelease -PVERSION_CODE=$VERSION_CODE -PVERSION_NAME=$VERSION_NAME
+          ./gradlew assembleDebug -PVERSION_CODE=$VERSION_CODE -PVERSION_NAME=$VERSION_NAME
 
-      - name: Release
-        uses: softprops/action-gh-release@v3
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
         with:
-          files: |
-            app/build/outputs/apk/signedRelease/app-signedRelease.apk
-          prerelease: |
-            if [[ ${{ github.ref }} =~ ^refs/tags/[0-9]+\.[0-9]+[a-z]+$ ]]; then
-              echo "false"
-            else
-              echo "true"
-            fi
+          name: Cowspent-debug
+          path: app/build/outputs/apk/debug/*.apk
