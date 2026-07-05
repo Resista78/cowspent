@@ -4,44 +4,44 @@
     <string name="app_name">Cowspent</string>
 
     <!-- Actions -->
-    <string name="action_new_bill">Új számla</string>
+    <string name="action_new_bill">Új kiadás</string>
     <string name="action_add_project">Projekt hozzáadása</string>
     <string name="action_save">Mentés</string>
     <string name="action_edit">Szerkesztés</string>
     <string name="action_share">Megosztás</string>
     <string name="action_search">Keresés</string>
     <string name="action_delete">Törlés</string>
-    <string name="action_archive">Archívum</string>
-    <string name="action_unarchive">Archívum visszavonása</string>
+    <string name="action_archive">Archiválás</string>
+    <string name="action_unarchive">Archiválás visszavonása</string>
     <string name="action_export">Exportálás</string>
     <string name="action_stats">Statisztikák</string>
     <string name="action_settle">Elszámolás</string>
-    <string name="action_scan_qrcode">Scan QR Code</string>
+    <string name="action_scan_qrcode">QR-kód beolvasása</string>
     <string name="action_settings">Beállítások</string>
-    <string name="action_label_bills">Hiányzó kategóriák címkézése</string>
+    <string name="action_label_bills">Hiányzó kategóriák pótlása</string>
     <string name="action_logout">Kijelentkezés</string>
-    <string name="action_connect">Kijelentkezés</string>
+    <string name="action_connect">Kapcsolódás</string>
     <string name="action_discard">Elvetés</string>
     <string name="action_members">Tagok</string>
     <string name="action_labels">Címkék</string>
-    <string name="action_currencies">Valuták</string>
+    <string name="action_currencies">Pénznemek</string>
 
     <!-- Titles -->
     <string name="title_stats">Statisztika</string>
     <string name="title_edit_project">Projekt szerkesztése</string>
-    <string name="title_label_bills">Számlák címkézése</string>
+    <string name="title_label_bills">Kiadások címkézése</string>
     <string name="title_labels">Címkék kezelése</string>
-    <string name="title_about">Körülbelül</string>
-    <string name="title_settle">Projekt lezárása</string>
+    <string name="title_about">Névjegy</string>
+    <string name="title_settle">Projekt elszámolása</string>
     <string name="title_share">Projekt megosztása</string>
     <string name="title_add_project">Projekt hozzáadása</string>
-    <string name="title_account">Nextcloud Fiók</string>
-    <string name="title_share_web">Web link</string>
-    <string name="title_share_qr">Cowspent link</string>
+    <string name="title_account">Nextcloud-fiók</string>
+    <string name="title_share_web">Webes hivatkozás</string>
+    <string name="title_share_qr">Cowspent-hivatkozás</string>
     <string name="title_confirm">Biztos vagy benne?</string>
 
     <!-- Labels and Fields -->
-    <string name="label_all_bills">Összes számla</string>
+    <string name="label_all_bills">Összes kiadás</string>
     <string name="label_categories">Kategóriák</string>
     <string name="label_payment_modes">Fizetési módok</string>
     <string name="label_name">Név</string>
@@ -51,7 +51,7 @@
     <string name="label_activated">Aktív</string>
     <string name="label_password">Jelszó</string>
     <string name="label_email">E-mail</string>
-    <string name="label_url">Server címe</string>
+    <string name="label_url">Szerver címe</string>
     <string name="label_username">Felhasználónév</string>
     <string name="label_comment">Megjegyzés</string>
     <string name="label_what">Mi?</string>
@@ -60,7 +60,7 @@
     <string name="label_repeat">Ismétlődés</string>
     <string name="label_mode">Mód</string>
     <string name="label_category">Kategória</string>
-    <string name="label_project_id">Projekt ID/name</string>
+    <string name="label_project_id">Projektazonosító / név</string>
     <string name="label_project_title">Projekt címe</string>
     <string name="label_use_sso">Használja a Nextcloud alkalmazásfiókot</string>
 
@@ -72,7 +72,7 @@
     <string name="dialog_sync_error_msg">Szinkronizálás sikertelen a következőhöz: %1$s.\n\n%2$s</string>
     <string name="dialog_balanced_msg">Nincs rendezendő tartozás</string>
     <string name="msg_project_added">Projekt %1$s hozzáadva</string>
-    <string name="msg_bill_labeled_done">Minden számla címkével ellátva</string>
+    <string name="msg_bill_labeled_done">Minden kiadás címkével ellátva</string>
     <string name="msg_no_suggestions">Nincsenek javaslatok</string>
     <string name="msg_auth_warning">Cospend szükséges v0.3.4+.</string>
     <string name="msg_link_copied">Link a vágólapra másolva</string>
@@ -80,17 +80,17 @@
     <string name="msg_share_web">Link a webböngészőhöz való hozzáféréshez.</string>
     <string name="msg_share_qr_warn">Oszd meg ezt a linket egy Cowspent felhasználóval.</string>
     <string name="msg_settle_intro">Elszámolás %1$s:</string>
-    <string name="msg_settle_sentence">%1$s V %3$.2f hogy %2$s</string>
-    <string name="msg_stats_intro">Statisztikák ehhez: %1$s:</string>
+    <string name="msg_settle_sentence">%1$s %3$.2f összeget fizet %2$s részére.</string>
+    <string name="msg_stats_intro">Statisztikák: %1$s:</string>
     <string name="msg_stats_header">Tag (Fizetett | Költött | Egyenleg)</string>
-    <string name="msg_logged_in_as">Bejelentkezve mint %1$s</string>
+    <string name="msg_logged_in_as">Bejelentkezve: %1$s</string>
 
     <!-- Errors -->
     <string name="error_generic">Hiba</string>
-    <string name="error_loading">Terhelés</string>
+    <string name="error_loading">Betöltés</string>
     <string name="error_no_projects">Nem található projekt</string>
     <string name="error_no_members">Nem találhatók tagok</string>
-    <string name="error_no_bills">Nem találhatók számlák</string>
+    <string name="error_no_bills">Nem találhatók kiadások</string>
     <string name="error_no_member">Legalább egy tag szükséges</string>
     <string name="error_maintenance_mode">A szerver karbantartási módban van</string>
     <string name="error_400">400 Hibás kérés</string>
@@ -105,14 +105,14 @@
     <string name="error_invalid_email">Érvénytelen e-mail cím</string>
     <string name="error_invalid_project_id">Érvénytelen projekt ID</string>
     <string name="error_invalid_project_name">Érvénytelen projekt címe</string>
-    <string name="error_invalid_bill_name">Érvénytelen számlanév</string>
-    <string name="error_invalid_bill_date">Érvénytelen számlázási dátum</string>
+    <string name="error_invalid_bill_name">Érvénytelen kiadás neve</string>
+    <string name="error_invalid_bill_date">Érvénytelen kiadás dátuma</string>
     <string name="error_invalid_bill_payer">Válassz fizetőt</string>
     <string name="error_invalid_bill_owers">Válassz legalább egy tagot</string>
     <string name="error_no_network">Nincs hálózati kapcsolat</string>
     <string name="error_server">Szerverhiba</string>
     <string name="error_io">Szerverkapcsolat megszakadt</string>
-    <string name="error_share_impossible">Cannot share this project</string>
+    <string name="error_share_impossible">A projekt nem osztható meg.</string>
 
     <!-- Drawer / Common UI -->
     <string name="drawer_no_account">Csatlakozás a Nextcloud fiókhoz</string>
@@ -126,7 +126,7 @@
     <!-- Settings -->
     <string name="settings_appearance">Megjelenés</string>
     <string name="settings_network">Hálózat</string>
-    <string name="settings_other">Egyébb</string>
+    <string name="settings_other">Egyéb</string>
     <string name="settings_night_mode">Téma</string>
     <string name="settings_offline_mode">Offline mód</string>
     <string name="settings_offline_mode_summary">Csak manuális szinkronizálás.</string>
@@ -138,10 +138,10 @@
 
     <string name="pref_value_color_system">Rendszer</string>
     <string name="pref_value_color_server">Nextcloud</string>
-    <string name="pref_value_color_manual">Kézikönyv</string>
+    <string name="pref_value_color_manual">Kézi</string>
     <string name="pref_value_theme_light">Világos</string>
     <string name="pref_value_theme_dark">Sötét</string>
-    <string name="pref_value_theme_system">Kövesse a rendszertémát</string>
+    <string name="pref_value_theme_system">Rendszertéma követése</string>
 
     <!-- Constants (Do not translate) -->
     <string name="pref_key_night_mode" translatable="false">nightMode</string>
@@ -169,7 +169,7 @@
     <string name="payment_mode_all">Minden</string>
     <string name="payment_mode_credit_card">Bankkártya</string>
     <string name="payment_mode_cash">Készpénz</string>
-    <string name="payment_mode_check">Ellenőrzés</string>
+    <string name="payment_mode_check">Csekk</string>
     <string name="payment_mode_online">Online</string>
     <string name="payment_mode_transfer">Átutalás</string>
 
@@ -179,7 +179,7 @@
     <string name="category_groceries">Élelmiszer</string>
     <string name="category_leisure">Bár/Szórakozás</string>
     <string name="category_rent">Lakbér</string>
-    <string name="category_bills">Számla</string>
+    <string name="category_bills">Kiadás</string>
     <string name="category_excursion">Kirándulás/Kultúra</string>
     <string name="category_health">Egészség</string>
     <string name="category_shopping">Vásárlás</string>
@@ -190,8 +190,8 @@
     <string name="category_sport">Sport</string>
 
     <!-- Project specific -->
-    <string name="new_project_action">Mit</string>
-    <string name="new_project_where">Hol</string>
+    <string name="new_project_action">Művelet</string>
+    <string name="new_project_where">Hol?</string>
     <string name="where_local">Csak helyben</string>
     <string name="where_cospend">Cospend</string>
     <string name="where_ihatemoney">IHateMoney</string>
@@ -209,7 +209,7 @@
     <string name="no_bills_text">Nincsenek kiadások.</string>
     <string name="member_already_exists">A tag már létezik.</string>
     <string name="activity_dialog_title">Projekt: %1$s</string>
-    <string name="remove_project_confirmation">A %1$s projekt eltávolítása.</string>
+    <string name="remove_project_confirmation">A(z) %1$s projekt eltávolítva.</string>
     <string name="file_saved_success">Fájl mentve: %1$s</string>
     <string name="import_error_header">Az importálás sikertelen a(z) %d sorban</string>
     <string name="import_error_date">Érvénytelen dátumformátum a(z) %d sorban</string>
@@ -221,8 +221,8 @@
 
     <!-- Settlement -->
     <string name="center_none">Nincs (optimális)</string>
-    <string name="settle_who">Ki fizet</string>
-    <string name="settle_to_whom">Kinek</string>
+    <string name="settle_who">Ki fizet?</string>
+    <string name="settle_to_whom">Kinek?</string>
     <string name="settle_how_much">Összeg</string>
     <string name="simple_settle_share">Megosztás</string>
     <string name="simple_create_bills">Kiadások létrehozása</string>
@@ -258,7 +258,7 @@
     <string name="delete_label_confirmation_message">Biztosan törölni szeretnéd ezt a címkét?</string>
 
     <!-- About -->
-    <string name="about_version">Verzió %1$s</string>
+    <string name="about_version">Verzió: %1$s</string>
     <string name="about_maintainer_title">Karbantartó</string>
     <string name="about_maintainer" translatable="false">Helcel.net</string>
     <string name="about_license_title">Engedély</string>
