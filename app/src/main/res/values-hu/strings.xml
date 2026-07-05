@@ -190,13 +190,13 @@
     <string name="category_sport">Sport</string>
 
     <!-- Project specific -->
-    <string name="new_project_action">Művelet</string>
+    <string name="new_project_action">Mit szeretnél csinálni?</string>
     <string name="new_project_where">Hol?</string>
     <string name="where_local">Csak helyben</string>
     <string name="where_cospend">Cospend</string>
     <string name="where_ihatemoney">IHateMoney</string>
-    <string name="todo_join">Csatlakozás meglévő projekthez</string>
-    <string name="todo_create">Új projekt létrehozása</string>
+    <string name="todo_join">Meglévő projekt</string>
+    <string name="todo_create">Új projekt</string>
     <string name="import_tooltip">Importálás fájlból</string>
     <string name="choose_account_project_dialog_title">Projekt kiválasztása</string>
     <string name="choose_account_project_dialog_impossible">Ehhez a fiókhoz nem található projekt.</string>
