@@ -31,9 +31,9 @@ import java.util.*
 import kotlin.math.max
 
 enum class SpendingTimeView(val label: String) {
-    WEEKLY("Weekly"),
-    MONTHLY("Monthly"),
-    YEARLY("Yearly")
+    WEEKLY("Heti"),
+    MONTHLY("Havi"),
+    YEARLY("Éves")
 }
 
 @Composable
@@ -46,7 +46,7 @@ fun ProjectSpendingGraph(
     val shareStatsIntro = stringResource(R.string.msg_stats_intro, projectName)
     if (allBills.isEmpty()) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Text("No data to display", style = MaterialTheme.typography.subtitle1, fontWeight = FontWeight.Bold, color = MaterialTheme.colors.onSurface.copy(alpha = 0.6f))
+            Text("Nincs megjeleníthető adat", style = MaterialTheme.typography.subtitle1, fontWeight = FontWeight.Bold, color = MaterialTheme.colors.onSurface.copy(alpha = 0.6f))
         }
         return
     }
@@ -72,7 +72,7 @@ fun ProjectSpendingGraph(
             SpendingTimeView.MONTHLY -> cal.set(Calendar.DAY_OF_MONTH, 1)
             SpendingTimeView.YEARLY -> cal.set(Calendar.DAY_OF_YEAR, 1)
         }
-        
+
         val list = mutableListOf<Long>()
         val endLimit = projectMaxTimestamp * 1000
         while (cal.timeInMillis <= endLimit) {
@@ -133,7 +133,7 @@ fun ProjectSpendingGraph(
     LaunchedEffect(memberSpendingByPeriod, periods, timeView, projectName) {
         val statsText = StringBuilder()
         statsText.append(shareStatsIntro).append("\n\n")
-        statsText.append("Spending Trend (${timeView.label}):\n")
+        statsText.append("Kiadások alakulása (${timeView.label}):\n")
         periods.indices.forEach { i ->
             val timestamp = periods[i]
             val dateStr = SimpleDateFormat("yyyy-MM-dd", Locale.ROOT).format(Date(timestamp * 1000))
@@ -143,7 +143,7 @@ fun ProjectSpendingGraph(
             }
         }
         val grandTotal = allMembers.sumOf { m -> memberSpendingByPeriod[m.id]?.sum() ?: 0.0 }
-        statsText.append("\nTotal: ${grandTotal.toInt()}")
+        statsText.append("\nÖsszes: ${grandTotal.toInt()}")
         onShareReady(statsText.toString())
     }
 
@@ -156,14 +156,14 @@ fun ProjectSpendingGraph(
             BoxWithConstraints(modifier = Modifier.fillMaxSize().padding(12.dp)) {
                 val totalAvailableWidth = constraints.maxWidth.toFloat()
                 val totalHeight = constraints.maxHeight.toFloat()
-                
+
                 val yAxisWidth = 44.dp
                 val xAxisHeight = 32.dp
-                
+
                 val density = LocalDensity.current
                 val yAxisWidthPx = with(density) { yAxisWidth.toPx() }
                 val xAxisHeightPx = with(density) { xAxisHeight.toPx() }
-                
+
                 val chartHeight = totalHeight - xAxisHeightPx
 
                 // Y-Axis Labels
@@ -225,7 +225,7 @@ fun ProjectSpendingGraph(
                             val fullWidthPerPeriod = size.width / periods.size
                             val groupWidth = fullWidthPerPeriod * 0.75f
                             val groupSpacing = fullWidthPerPeriod * 0.25f
-                            
+
                             periods.indices.forEach { i ->
                                 if (showTotal) {
                                     val totalAmount = allMembers.sumOf { memberSpendingByPeriod[it.id]?.get(i) ?: 0.0 }
@@ -251,7 +251,7 @@ fun ProjectSpendingGraph(
                                             val amount = memberSpendingByPeriod[member.id]!![i]
                                             val barHeight = (amount.toFloat() / maxSpendingInPeriod.toFloat()) * size.height
                                             val x = groupStartX + centeringOffset + activeIndex * memberBarWidth
-                                            
+
                                             drawRoundRect(
                                                 color = Color(android.graphics.Color.rgb(member.r ?: 0, member.g ?: 0, member.b ?: 0)),
                                                 topLeft = Offset(x, size.height - barHeight),
@@ -268,7 +268,7 @@ fun ProjectSpendingGraph(
                                 trendLine.forEachIndexed { i, value ->
                                     val x = i * fullWidthPerPeriod + fullWidthPerPeriod / 2f
                                     val y = size.height - (value.toFloat() / maxSpendingInPeriod.toFloat()) * size.height
-                                    
+
                                     if (i == 0) {
                                         linePath.moveTo(x, y)
                                     } else {
@@ -292,7 +292,7 @@ fun ProjectSpendingGraph(
                                 )
                             }
                         }
-                        
+
                         Box(modifier = Modifier.fillMaxWidth().height(xAxisHeight)) {
                             val locale = LocalLocale.current.platformLocale
                             val labelIndices = when(timeView) {
@@ -375,7 +375,7 @@ fun ProjectSpendingGraph(
                     )
                 }
                 Spacer(Modifier.width(4.dp))
-                Text("Total", style = MaterialTheme.typography.caption, color = Color.Gray)
+                Text("Összes", style = MaterialTheme.typography.caption, color = Color.Gray)
                 Switch(
                     checked = showTotal,
                     onCheckedChange = { showTotal = it },
@@ -385,7 +385,7 @@ fun ProjectSpendingGraph(
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-        
+
         if (!showTotal) {
             val scrollState = rememberScrollState()
             Column(
