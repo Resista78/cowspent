@@ -57,7 +57,7 @@
     <string name="label_what">Kiadás neve?</string>
     <string name="label_payer">Ki fizetett?</string>
     <string name="label_owers">Kinek?</string>
-    <string name="label_repeat"Í>Ismétlődés</string>
+    <string name="label_repeat">Ismétlődés</string>
     <string name="label_mode">Mód</string>
     <string name="label_category">Kategória</string>
     <string name="label_project_id">Projektazonosító / név</string>
