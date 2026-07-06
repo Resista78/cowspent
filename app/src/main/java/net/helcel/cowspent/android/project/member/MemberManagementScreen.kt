@@ -66,7 +66,7 @@ fun MemberManagementScreen(
             ) {
                 item {
                     Text(
-                        text = "ACTIVATED MEMBERS",
+                        text = "AKTÍV TAGOK",
                         style = MaterialTheme.typography.subtitle1,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colors.onSurface,
@@ -85,7 +85,7 @@ fun MemberManagementScreen(
                 if (deactivatedMembers.isNotEmpty()) {
                     item {
                         Text(
-                            text = "DEACTIVATED MEMBERS",
+                            text = "INAKTÍV TAGOK",
                             style = MaterialTheme.typography.subtitle1,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colors.onSurface.copy(alpha = 0.6f),
@@ -136,7 +136,7 @@ fun MemberRow(
         IconButton(onClick = { onToggleMember(!member.isActivated) }) {
             Icon(
                 imageVector = if (member.isActivated) Icons.Default.Delete else Icons.Default.Add,
-                contentDescription = if (member.isActivated) "Deactivate" else "Activate",
+                contentDescription = if (member.isActivated) "Tag deaktíválás" else "Tag aktiválás",
                 tint = if (member.isActivated) MaterialTheme.colors.error.copy(alpha = 0.6f) else MaterialTheme.colors.primary.copy(alpha = 0.6f)
             )
         }
