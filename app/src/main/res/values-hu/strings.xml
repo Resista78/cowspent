@@ -82,7 +82,7 @@
     <string name="msg_settle_intro">Elszámolás %1$s:</string>
     <string name="msg_settle_sentence">%1$s %3$.2f összeget fizet %2$s részére.</string>
     <string name="msg_stats_intro">Statisztikák: %1$s:</string>
-    <string name="msg_stats_header">Tag (Fizetett | Költött | Egyenleg)</string>
+    <string name="msg_stats_header">Tag (Bef. | Költ. | Egyen.)</string>
     <string name="msg_logged_in_as">Bejelentkezve: %1$s</string>
 
     <!-- Errors -->
