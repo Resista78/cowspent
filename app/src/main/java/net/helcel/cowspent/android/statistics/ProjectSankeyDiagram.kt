@@ -105,7 +105,7 @@ fun ProjectSankeyDiagram(
 
     if (activeBills.isEmpty()) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Text("No data to display", style = MaterialTheme.typography.subtitle1, fontWeight = FontWeight.Bold, color = MaterialTheme.colors.onSurface.copy(alpha = 0.6f))
+            Text("Nincs megjeleníthető adat", style = MaterialTheme.typography.subtitle1, fontWeight = FontWeight.Bold, color = MaterialTheme.colors.onSurface.copy(alpha = 0.6f))
         }
         return
     }
@@ -113,7 +113,7 @@ fun ProjectSankeyDiagram(
     val spendings = remember(activeBills, selectedMemberId, membersMap) {
         val spentMap = mutableMapOf<Long, Double>().apply { membersMap.keys.forEach { put(it, 0.0) } }
         val catMap = mutableMapOf<Long, Double>()
-        
+
         activeBills.forEach { bill ->
             val totalWeight = bill.billOwers.sumOf { membersMap[it.memberId]?.weight ?: 1.0 }
             if (totalWeight > 0) {
@@ -143,15 +143,15 @@ fun ProjectSankeyDiagram(
     LaunchedEffect(displayMemberSpendings, displayCategorySpendings, totalAmount, projectName) {
         val statsText = StringBuilder().apply {
             append("// ").append(shareStatsIntro.replace("\n", "\n// ")).append("\n\n")
-            val middleNode = if (selectedMemberId == -1L) "Total" else "Spent"
+            val middleNode = if (selectedMemberId == -1L) "Összes" else "Elköltve"
             displayMemberSpendings.forEach { (id, amount) -> append("${membersMap[id]?.name ?: "???"} [${formatShortValue(amount)}] $middleNode\n") }
             append("\n")
-            displayCategorySpendings.forEach { (id, amount) -> append("$middleNode [${formatShortValue(amount)}] ${categoriesMap[id]?.name ?: "Other"}\n") }
+            displayCategorySpendings.forEach { (id, amount) -> append("$middleNode [${formatShortValue(amount)}] ${categoriesMap[id]?.name ?: "Egyéb"}\n") }
             append("\n")
             displayMemberSpendings.forEach { (id, _) ->
                 membersMap[id]?.let { append(":${it.name} ${String.format("#%02x%02x%02x", it.r ?: 128, it.g ?: 128, it.b ?: 128)}\n") }
             }
-            displayCategorySpendings.forEach { (id, _) -> categoriesMap[id]?.let { append(":${it.name ?: "Other"} ${it.color}\n") } }
+            displayCategorySpendings.forEach { (id, _) -> categoriesMap[id]?.let { append(":${it.name ?: "Egyéb"} ${it.color}\n") } }
         }
         onShareReady(statsText.toString())
     }
@@ -161,8 +161,8 @@ fun ProjectSankeyDiagram(
             val selectedMember = membersMap[selectedMemberId]
             Row(verticalAlignment = Alignment.CenterVertically) {
                 EditableExposedDropdownMenu(
-                    value = selectedMember?.name ?: "All Members",
-                    placeholder = "Filter by member",
+                    value = selectedMember?.name ?: "Minden tag",
+                    placeholder = "Szűrés tag szerint",
                     expanded = expanded,
                     onExpandedChange = { expanded = it },
                     onDismissRequest = { expanded = false },
@@ -178,7 +178,7 @@ fun ProjectSankeyDiagram(
                         DropdownMenuItem(onClick = { selectedMemberId = -1L; expanded = false }) {
                             Icon(Icons.Default.Group, contentDescription = null)
                             Spacer(modifier = Modifier.width(12.dp))
-                            Text("All Members")
+                            Text("Minden tag")
                         }
                         allMembers.forEach { member ->
                             DropdownMenuItem(onClick = { selectedMemberId = member.id; expanded = false }) {
@@ -190,14 +190,14 @@ fun ProjectSankeyDiagram(
                     }
                 )
                 IconButton(onClick = { isSpecialMode = !isSpecialMode }, modifier = Modifier.padding(bottom = 16.dp)) {
-                    Icon(Icons.Default.ViewColumn, contentDescription = "Focus Mode", tint = if (isSpecialMode) MaterialTheme.colors.primary else LocalContentColor.current)
+                    Icon(Icons.Default.ViewColumn, contentDescription = "Fókusz mód", tint = if (isSpecialMode) MaterialTheme.colors.primary else LocalContentColor.current)
                 }
             }
         }
 
         if (totalAmount <= 0) {
             Box(modifier = Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {
-                Text("No spending data for selected filter", style = MaterialTheme.typography.body1)
+                Text("A kiválasztott szűrőhöz nincs adat", style = MaterialTheme.typography.body1)
             }
         } else {
             SankeyContent(isSpecialMode, selectedMemberId, totalAmount, displayMemberSpendings, displayCategorySpendings, membersMap, categoriesMap)
@@ -221,7 +221,7 @@ private fun SankeyContent(
 ) {
     val density = LocalDensity.current
     val scope = rememberCoroutineScope()
-    
+
     val topFocalIndex = remember { Animatable(0f) }
     val bottomFocalIndex = remember { Animatable(0f) }
 
@@ -267,7 +267,7 @@ private fun SankeyContent(
                     else currentX = w / 2
                     centers.add(currentX)
                 }
-                
+
                 val focalPointX = if (spendings.isEmpty()) 0f else {
                     val idx = focalIndex.coerceIn(0f, (spendings.size - 1).toFloat())
                     val low = idx.toInt()
@@ -332,7 +332,7 @@ private fun SankeyContent(
                     val layout = topLayout[index]
                     val wDp = with(density) { layout.visualWidth.toDp() }
                     val xDp = with(density) { (layout.centerX - layout.visualWidth / 2).toDp() }
-                    
+
                     Box(modifier = Modifier.offset(x = xDp).width(wDp).fillMaxHeight()
                         .then(if (isSpecialMode) Modifier.clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) {
                             scope.launch { topFocalIndex.animateTo(index.toFloat(), spring(Spring.DampingRatioLowBouncy, Spring.StiffnessLow)) }
@@ -347,7 +347,7 @@ private fun SankeyContent(
 
             Box(modifier = Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {
                 Box(modifier = Modifier.width(with(density) { (totalAmount * moneyScalePx).toFloat().toDp() }).height(SankeyDimens.TotalNodeHeight).background(Color(0xFF333333)).onGloballyPositioned { totalNodeCoordinates = it }, contentAlignment = Alignment.Center) {
-                    Text(text = if (selectedMemberId == -1L) formatShortValue(totalAmount) else "SPENT: ${formatShortValue(totalAmount)}", color = Color.White, fontWeight = FontWeight.ExtraBold, fontSize = 16.sp, modifier = Modifier.padding(horizontal = 8.dp), maxLines = 1)
+                    Text(text = if (selectedMemberId == -1L) formatShortValue(totalAmount) else "ELKÖLTVE: ${formatShortValue(totalAmount)}", color = Color.White, fontWeight = FontWeight.ExtraBold, fontSize = 16.sp, modifier = Modifier.padding(horizontal = 8.dp), maxLines = 1)
                 }
             }
 
@@ -370,7 +370,7 @@ private fun SankeyContent(
                     val layout = bottomLayout[index]
                     val wDp = with(density) { layout.visualWidth.toDp() }
                     val xDp = with(density) { (layout.centerX - layout.visualWidth / 2).toDp() }
-                    
+
                     Box(modifier = Modifier.offset(x = xDp).width(wDp).fillMaxHeight()
                         .then(if (isSpecialMode) Modifier.clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) {
                             scope.launch { bottomFocalIndex.animateTo(index.toFloat(), spring(Spring.DampingRatioLowBouncy, Spring.StiffnessLow)) }
