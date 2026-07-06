@@ -54,10 +54,10 @@
     <string name="label_url">Szerver címe</string>
     <string name="label_username">Felhasználónév</string>
     <string name="label_comment">Megjegyzés</string>
-    <string name="label_what">Mi?</string>
+    <string name="label_what">Kiadás neve?</string>
     <string name="label_payer">Ki fizetett?</string>
     <string name="label_owers">Kinek?</string>
-    <string name="label_repeat">Ismétlődés</string>
+    <string name="label_repeat"Í>Ismétlődés</string>
     <string name="label_mode">Mód</string>
     <string name="label_category">Kategória</string>
     <string name="label_project_id">Projektazonosító / név</string>
@@ -192,7 +192,7 @@
     <!-- Project specific -->
     <string name="new_project_action">Mit szeretnél csinálni?</string>
     <string name="new_project_where">Hol?</string>
-    <string name="where_local">Csak helyben</string>
+    <string name="where_local">Helyben</string>
     <string name="where_cospend">Cospend</string>
     <string name="where_ihatemoney">IHateMoney</string>
     <string name="todo_join">Meglévő projekt</string>
@@ -241,9 +241,9 @@
     <string name="stats_date_min">Kezdő dátum</string>
     <string name="stats_date_max">Záró dátum</string>
     <string name="stats_who">Tag</string>
-    <string name="stats_paid">Fizetett</string>
-    <string name="stats_spent">Elköltött</string>
-    <string name="stats_balance">Egyenleg</string>
+    <string name="stats_paid">Fiz.</string>
+    <string name="stats_spent">Költ.</string>
+    <string name="stats_balance">Egyen.</string>
     <string name="total">Összesen: %1$s</string>
 
     <!-- Errors Extra -->
