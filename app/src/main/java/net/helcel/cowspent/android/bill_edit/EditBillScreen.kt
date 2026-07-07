@@ -360,7 +360,7 @@ fun OwerSelectionSection(
             val diff = viewModel.getDiffSplit()
             if (abs(diff) > 0.01) {
                 val diffText =
-                    if (diff > 0) "Missing: ${SupportUtil.normalNumberFormat.format(diff)}" else "Excess: ${
+                    if (diff > 0) "Osztandó: ${SupportUtil.normalNumberFormat.format(diff)}" else "Túlosztva: ${
                         SupportUtil.normalNumberFormat.format(-diff)
                     }"
                 Text(
