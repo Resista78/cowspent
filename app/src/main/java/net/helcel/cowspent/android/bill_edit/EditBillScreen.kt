@@ -166,7 +166,7 @@ fun BillBasicInfoSection(
     onTimeClick: () -> Unit
 ) {
     Text(
-        text = "GENERAL",
+        text = "Alapadatok",
         style = MaterialTheme.typography.subtitle1,
         color = MaterialTheme.colors.onSurface,
         fontWeight = FontWeight.Bold,
@@ -371,7 +371,7 @@ fun OwerSelectionSection(
                 )
             }
         } else {
-            Text("Elosztandó", fontSize = 12.sp)
+            Text("Egyenlően", fontSize = 12.sp)
         }
         Switch(
             checked = !viewModel.isCustomSplit,
@@ -459,7 +459,7 @@ fun BillAdditionalDetailsSection(
     canEdit: Boolean
 ) {
     Text(
-        text = "RÉSZLETEK",
+        text = "Részletek",
         style = MaterialTheme.typography.subtitle1,
         color = MaterialTheme.colors.onSurface,
         fontWeight = FontWeight.Bold,
