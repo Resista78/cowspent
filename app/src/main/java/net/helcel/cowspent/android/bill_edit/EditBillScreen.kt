@@ -74,7 +74,7 @@ fun EditBillScreen(
                         }
                         if (onDuplicate != null) {
                             IconButton(onClick = onDuplicate) {
-                                Icon(Icons.Default.ContentCopy, contentDescription = "Duplicate")
+                                Icon(Icons.Default.ContentCopy, contentDescription = "Másolat")
                             }
                         }
                         if (onDelete != null) {
@@ -211,7 +211,7 @@ fun BillBasicInfoSection(
                 enabled = canEdit,
                 onClick = {
                     val mainLabel = viewModel.mainCurrencyName.ifEmpty { "$" }
-                    val options = listOf("$mainLabel | Base") + viewModel.currencies.map { 
+                    val options = listOf("$mainLabel | Alap") + viewModel.currencies.map { 
                         "${it.name} | 1 $mainLabel = ${it.exchangeRate} ${it.name}" 
                     }
                     viewModel.showDialog(
@@ -227,7 +227,7 @@ fun BillBasicInfoSection(
                     )
                 }
             ) {
-                Icon(Icons.Default.SwapHoriz, contentDescription = "Change Currency")
+                Icon(Icons.Default.SwapHoriz, contentDescription = "Valuta váltása")
             }
         },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
@@ -248,7 +248,7 @@ fun BillBasicInfoSection(
             onClick = onDateClick,
             modifier = Modifier.weight(1f),
             enabled = canEdit,
-            leadingIcon = { Icon(Icons.Default.Event, contentDescription = "Select Date") }
+            leadingIcon = { Icon(Icons.Default.Event, contentDescription = "Dátum kiválasztása") }
         )
         Spacer(modifier = Modifier.width(8.dp))
         ClickableOutlinedTextField(
@@ -256,7 +256,7 @@ fun BillBasicInfoSection(
             onClick = onTimeClick,
             modifier = Modifier.weight(1f),
             enabled = canEdit,
-            leadingIcon = { Icon(Icons.Default.AccessTime, contentDescription = "Select Time") }
+            leadingIcon = { Icon(Icons.Default.AccessTime, contentDescription = "Idő kiválasztása") }
         )
     }
 }
@@ -360,7 +360,7 @@ fun OwerSelectionSection(
             val diff = viewModel.getDiffSplit()
             if (abs(diff) > 0.01) {
                 val diffText =
-                    if (diff > 0) "Osztandó: ${SupportUtil.normalNumberFormat.format(diff)}" else "Túlosztva: ${
+                    if (diff > 0) "Elosztandó: ${SupportUtil.normalNumberFormat.format(diff)}" else "Túlosztva: ${
                         SupportUtil.normalNumberFormat.format(-diff)
                     }"
                 Text(
@@ -371,7 +371,7 @@ fun OwerSelectionSection(
                 )
             }
         } else {
-            Text("Even Split", fontSize = 12.sp)
+            Text("Elosztandó", fontSize = 12.sp)
         }
         Switch(
             checked = !viewModel.isCustomSplit,
@@ -459,7 +459,7 @@ fun BillAdditionalDetailsSection(
     canEdit: Boolean
 ) {
     Text(
-        text = "DETAILS",
+        text = "RÉSZLETEK",
         style = MaterialTheme.typography.subtitle1,
         color = MaterialTheme.colors.onSurface,
         fontWeight = FontWeight.Bold,
