@@ -95,7 +95,7 @@ fun EditProjectScreen(
                 .verticalScroll(scrollState)
         ) {
             Text(
-                text = "GENERAL",
+                text = "Projekt neve",
                 style = MaterialTheme.typography.subtitle1,
                 color = MaterialTheme.colors.onSurface,
                 fontWeight = FontWeight.Bold,
@@ -122,7 +122,7 @@ fun EditProjectScreen(
                 )
 
                 Text(
-                    text = "SECURITY",
+                    text = "BIZTONSÁG",
                     style = MaterialTheme.typography.subtitle1,
                     color = MaterialTheme.colors.onSurface,
                     fontWeight = FontWeight.Bold,
