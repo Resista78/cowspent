@@ -242,8 +242,8 @@
     <string name="stats_date_max">Záró dátum</string>
     <string name="stats_who">Tag</string>
     <string name="stats_paid">Fizető</string>
-    <string name="stats_spent">Adós</string>
-    <string name="stats_balance"> Egyen-leg  </string>
+    <string name="stats_spent">Költött</string>
+    <string name="stats_balance">Egyenleg</string>
     <string name="total">Összesen: %1$s</string>
 
     <!-- Errors Extra -->
