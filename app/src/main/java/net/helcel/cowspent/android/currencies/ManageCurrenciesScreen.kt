@@ -152,7 +152,7 @@ fun ManageCurrenciesScreen(
                 // Section 2: Exchange Rates
                 val isEditing = viewModel.editingCurrencyId != null
                 Text(
-                    text = (if (isEditing) "Edit exchange rate" else "Add exchange rate").uppercase(),
+                    text = (if (isEditing) "Árfolyam szerkesztése" else "Árfolyam hozzáadása").uppercase(),
                     style = MaterialTheme.typography.subtitle1,
                     color = MaterialTheme.colors.onSurface,
                     fontWeight = FontWeight.Bold,
@@ -178,7 +178,7 @@ fun ManageCurrenciesScreen(
                             color = if (isEditing) MaterialTheme.colors.secondary else MaterialTheme.colors.primary,
                             modifier = Modifier.padding(horizontal = 4.dp)
                         )
-                        
+
                         OutlinedTextField(
                             value = viewModel.newCurrencyRate,
                             onValueChange = { viewModel.newCurrencyRate = it },
@@ -208,7 +208,7 @@ fun ManageCurrenciesScreen(
                                 backgroundColor = MaterialTheme.colors.onSurface.copy(alpha = 0.02f)
                             )
                         )
-                        
+
                         Row(modifier = Modifier.padding(start = 4.dp)) {
                             IconButton(
                                 onClick = onAdd,
@@ -222,7 +222,7 @@ fun ManageCurrenciesScreen(
                                     } else MaterialTheme.colors.onSurface.copy(alpha = 0.2f)
                                 )
                             }
-                            
+
                             if (isEditing) {
                                 IconButton(onClick = onCancelEdit) {
                                     Icon(Icons.Default.Close, contentDescription = null, tint = MaterialTheme.colors.error)
@@ -233,9 +233,9 @@ fun ManageCurrenciesScreen(
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
-                
+
                 Text(
-                    text = "SAVED RATES",
+                    text = "MENTETT ÁRFOLYAMOK",
                     style = MaterialTheme.typography.subtitle1,
                     color = MaterialTheme.colors.onSurface,
                     fontWeight = FontWeight.Bold,
