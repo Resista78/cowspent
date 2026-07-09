@@ -275,9 +275,9 @@ fun ProjectStatisticsTable(
         ) {
             Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 12.dp)) {
                 Text(stringResource(R.string.stats_who).uppercase(), modifier = Modifier.weight(2f), fontWeight = FontWeight.Bold, color = MaterialTheme.colors.onSurface, style = MaterialTheme.typography.overline)
-                Text(stringResource(R.string.stats_paid).uppercase(), modifier = Modifier.weight(1.5f), fontWeight = FontWeight.Bold, textAlign = TextAlign.End, color = MaterialTheme.colors.onSurface, style = MaterialTheme.typography.overline)
-                Text(stringResource(R.string.stats_spent).uppercase(), modifier = Modifier.weight(1.5f), fontWeight = FontWeight.Bold, textAlign = TextAlign.End, color = MaterialTheme.colors.onSurface, style = MaterialTheme.typography.overline)
-                Text(stringResource(R.string.stats_balance).uppercase(), modifier = Modifier.weight(1.5f), fontWeight = FontWeight.Bold, textAlign = TextAlign.End, color = MaterialTheme.colors.onSurface, style = MaterialTheme.typography.overline)
+                Text(stringResource(R.string.stats_paid).uppercase(), modifier = Modifier.weight(1.8f), fontWeight = FontWeight.Bold, textAlign = TextAlign.End, color = MaterialTheme.colors.onSurface, style = MaterialTheme.typography.overline)
+                Text(stringResource(R.string.stats_spent).uppercase(), modifier = Modifier.weight(1.8f), fontWeight = FontWeight.Bold, textAlign = TextAlign.End, color = MaterialTheme.colors.onSurface, style = MaterialTheme.typography.overline)
+                Text(stringResource(R.string.stats_balance).uppercase(), modifier = Modifier.weight(1.8f), fontWeight = FontWeight.Bold, textAlign = TextAlign.End, color = MaterialTheme.colors.onSurface, style = MaterialTheme.typography.overline)
             }
         }
 
